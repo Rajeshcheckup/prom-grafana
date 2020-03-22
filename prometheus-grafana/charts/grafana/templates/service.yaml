@@ -37,6 +37,7 @@ spec:
   ports:
     - name: {{ .Values.service.portName }}
       port: {{ .Values.service.port }}
+      nodePort: {{ .Values.service.nodePort }}
       protocol: TCP
       targetPort: {{ .Values.service.targetPort }}
 {{ if (and (eq .Values.service.type "NodePort") (not (empty .Values.service.nodePort))) }}
